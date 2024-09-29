@@ -37,7 +37,7 @@ export default function PlantsPage() {
         "Boosts energy levels",
         "Enhances cognitive function"
       ],
-      imageUrl: "https://example.com/ashwagandha.jpg"
+      imageUrl: "/images/ash.jpg"
     },
     {
       _id: "2",
@@ -50,7 +50,7 @@ export default function PlantsPage() {
         "Promotes respiratory health",
         "Reduces inflammation"
       ],
-      imageUrl: "https://example.com/tulsi.jpg"
+      imageUrl: "/images/tulsi.jpg"
     },
     {
       _id: "3",
@@ -63,7 +63,7 @@ export default function PlantsPage() {
         "Boosts immune system",
         "Acts as a natural insect repellent"
       ],
-      imageUrl: "https://www.pexels.com/photo/close-up-of-green-leaves-of-a-plant-12643734/"
+      imageUrl: "/images/neem.jpeg"
     },
     {
       _id: "4",
@@ -76,7 +76,7 @@ export default function PlantsPage() {
         "Lowers blood sugar levels",
         "Improves digestion"
       ],
-      imageUrl: "https://example.com/ginger.jpg"
+      imageUrl: "/images/ginger-root.jpg"
     },
     {
       _id: "5",
@@ -89,7 +89,7 @@ export default function PlantsPage() {
         "Supports joint health",
         "Improves brain function"
       ],
-      imageUrl: "https://example.com/turmeric.jpg"
+      imageUrl: "/images/turmeric.jpg"
     },
     {
       _id: "6",
@@ -102,7 +102,7 @@ export default function PlantsPage() {
         "Supports digestive health",
         "Promotes wound healing"
       ],
-      imageUrl: "https://example.com/aloe-vera.jpg"
+      imageUrl: "/images/Aloevera.jpg"
     },
   ];
 

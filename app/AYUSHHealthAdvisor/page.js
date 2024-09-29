@@ -56,7 +56,7 @@ const herbData = [
       benefits: 'Digestive aid, anti-nausea, anti-inflammatory',
       rating: 4.6,
       usage: 'Consume 1-3 g of ginger root daily',
-      imageUrl: '/images/ginger.jpg',
+      imageUrl: '/images/ginger-root.jpg',
       symptoms: ['nausea', 'motion sickness', 'digestive discomfort']
     },
     {
@@ -74,7 +74,7 @@ const herbData = [
       benefits: 'Skin health, antibacterial, supports liver function',
       rating: 4.5,
       usage: 'Apply neem oil on the skin or consume 1-2 tsp neem leaf powder',
-      imageUrl: '/images/neem.jpg',
+      imageUrl: '/images/neem.jpeg',
       symptoms: ['acne', 'skin infections', 'liver issues']
     },
     {
@@ -137,7 +137,7 @@ const herbData = [
       benefits: 'Digestive support, detoxification, anti-inflammatory',
       rating: 4.8,
       usage: 'Take 1-2 tsp of Triphala powder daily',
-      imageUrl: '/images/Triphala.jpg',
+      imageUrl: '/images/Triphala.jpeg',
       symptoms: ['constipation', 'digestive discomfort', 'toxins in the body']
     },
     {
@@ -288,13 +288,19 @@ const AYUSHHealthAdvisor = () => {
 
   const handleSubmit = (data) => {
     setLoading(true);
-    // Simulate API call with more sophisticated matching
+    
     setTimeout(() => {
       const userSymptoms = data.symptoms.toLowerCase().split(/[,.\s]+/);
-      const matchedHerbs = herbData.filter(herb => 
-        herb.symptoms.some(symptom => userSymptoms.includes(symptom))
+  
+      // Matching user symptoms with herb symptoms
+      const matchedHerbs = herbData.filter(herb =>
+        herb.symptoms.some(symptom =>
+          userSymptoms.some(userSymptom =>
+            symptom.includes(userSymptom) || userSymptom.includes(symptom)
+          )
+        )
       ).sort((a, b) => b.rating - a.rating).slice(0, 5);
-
+  
       setAnalysisResult({
         categories: [...new Set(matchedHerbs.flatMap(herb => herb.symptoms))],
         recommendations: matchedHerbs
@@ -303,9 +309,10 @@ const AYUSHHealthAdvisor = () => {
       setLoading(false);
     }, 2000);
   };
+  
 
   return (
-    <div className="max-w-6xl mx-auto p-8 bg-gradient-to-br from-green-100 to-blue-100 min-h-screen">
+    <div className="max-w-6xl mx-auto p-8 bg-gradient-to-br  min-h-screen">
       <h1 className="text-5xl font-bold text-center mb-12 text-green-800 tracking-tight">HerbGuru</h1>
       
       <Tabs value={activeTab} onValueChange={setActiveTab} className="bg-white rounded-2xl p-8 shadow-xl">
