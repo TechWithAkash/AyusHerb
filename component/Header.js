@@ -18,8 +18,11 @@ export default function Navbar() {
             <div className="ml-10 flex items-baseline space-x-4">
               <Link href="/plants" className="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">Plants</Link>
               <Link href="/identify" className="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">Identify</Link>
+              <Link href="/journey" className="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">Journey</Link>
               <Link href="/community" className="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">Community</Link>
-              <Link href="/login" className="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">Login</Link>
+              {/* <Link href="/login" className="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">Login</Link> */}
+              <Link href="/AYUSHHealthAdvisor" className="block hover:bg-green-700 px-3 py-2 rounded-md text-base font-medium">HerbGuru</Link>
+              
             </div>
           </div>
           <div className="md:hidden">
@@ -46,8 +49,10 @@ export default function Navbar() {
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link href="/plants" className="block hover:bg-green-700 px-3 py-2 rounded-md text-base font-medium">Plants</Link>
             <Link href="/identify" className="block hover:bg-green-700 px-3 py-2 rounded-md text-base font-medium">Identify</Link>
+            <Link href="/journey" className="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium">Journey</Link>
             <Link href="/community" className="block hover:bg-green-700 px-3 py-2 rounded-md text-base font-medium">Community</Link>
-            <Link href="/login" className="block hover:bg-green-700 px-3 py-2 rounded-md text-base font-medium">Login</Link>
+            {/* <Link href="/login" className="block hover:bg-green-700 px-3 py-2 rounded-md text-base font-medium">Login</Link> */}
+            <Link href="/AYUSHHealthAdvisor" className="block hover:bg-green-700 px-3 py-2 rounded-md text-base font-medium">HerbGuru</Link>
           </div>
         </div>
       )}
