@@ -216,8 +216,8 @@ const SymptomForm = ({ onSubmit }) => {
         className="bg-white text-lg"
       />
       {errors.symptoms && <p className="text-red-500 text-sm">{errors.symptoms.message}</p>}
-      <Button type="submit" className="w-full text-lg">
-        <Search className="mr-2 h-5 w-5" /> Get Personalized Recommendations
+      <Button type="submit" className="w-full text-lg bg-green-600 hover:bg-green-500 text-white">
+        <Search className="mr-2 h-5 w-5 " /> Get Personalized Recommendations
       </Button>
     </form>
   );
@@ -230,7 +230,7 @@ const HerbCard = ({ herb }) => {
     <Card className="mb-6 overflow-hidden hover:shadow-lg transition-shadow duration-300">
       <div className="flex flex-col md:flex-row">
         <div className="md:w-1/3">
-          <Image src={herb.imageUrl} alt={herb.name} className="w-full h-full object-cover" />
+          <Image src={herb.imageUrl} alt={herb.name} width={400} height={400} className="w-full h-full object-cover" />
         </div>
         <div className="md:w-2/3 p-6">
           <CardHeader>
@@ -313,10 +313,10 @@ const AYUSHHealthAdvisor = () => {
   
 
   return (
-    <div className="max-w-6xl mx-auto p-8 bg-gradient-to-br  min-h-screen">
-      <h1 className="text-5xl font-bold text-center mb-12 text-green-800 tracking-tight">HerbGuru</h1>
+    <div className="max-w-6xl mx-auto md:p-8 p-2 bg-gradient-to-br  min-h-screen">
+      <h1 className="text-5xl font-bold text-center md:mb-12 mb-8 pt-4 text-green-800 tracking-tight text-underline">HerbGuru</h1>
       
-      <Tabs value={activeTab} onValueChange={setActiveTab} className="bg-white rounded-2xl p-8 shadow-xl">
+      <Tabs value={activeTab} onValueChange={setActiveTab} className="bg-white rounded-2xl md:p-8 p-4 shadow-xl">
         <TabsList className="grid w-full grid-cols-2 mb-8">
           <TabsTrigger value="symptoms" className="text-xl py-3">
             <Activity className="mr-2 h-6 w-6" /> Symptoms
@@ -370,7 +370,7 @@ const AYUSHHealthAdvisor = () => {
         </TabsContent>
       </Tabs>
 
-      <div className="mt-12 bg-white p-8 rounded-2xl shadow-xl">
+      <div className="mt-12 bg-white md:p-8 p-6 rounded-2xl shadow-xl">
         <h3 className="text-3xl font-semibold mb-6 text-green-800">How It Works</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[

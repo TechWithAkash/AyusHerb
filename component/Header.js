@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { signIn, signOut, useSession } from "next-auth/react";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false); // For mobile menu
@@ -15,6 +16,15 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
+            <Image
+            src={"/images/logo.png"}
+            alt="Logo"
+            width={60}
+            height={60}
+            
+            >
+
+            </Image>
             <Link href="/" className="font-bold text-xl">
               AYUSHerbs
             </Link>
@@ -23,31 +33,31 @@ export default function Navbar() {
             <div className="ml-10 flex items-baseline space-x-4">
               <Link
                 href="/plants"
-                className="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium"
+                className="hover:bg-green-700 px-3 py-2 rounded-md text-[16px] font-medium"
               >
                 Plants
               </Link>
-              <Link
+              {/* <Link
                 href="/identify"
                 className="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium"
               >
                 Identify
-              </Link>
+              </Link> */}
               <Link
                 href="/journey"
-                className="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium"
+                className="hover:bg-green-700 px-3 py-2 rounded-md text-[16px] font-medium"
               >
                 Journey
               </Link>
               <Link
                 href="/community"
-                className="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium"
+                className="hover:bg-green-700 px-3 py-2 rounded-md text-[16px] font-medium"
               >
                 Community
               </Link>
               <Link
                 href="/AYUSHHealthAdvisor"
-                className="block hover:bg-green-700 px-3 py-2 rounded-md text-base font-medium"
+                className="block hover:bg-green-700 px-3 py-2 rounded-md text-[16px] font-medium"
               >
                 HerbGuru
               </Link>
@@ -69,14 +79,14 @@ export default function Navbar() {
 
                   {dropdownOpen && (
                     <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 ring-1 ring-black ring-opacity-5 z-50">
-                      <div className="px-4 py-2 text-sm text-gray-700">
+                      <div className="px-4 py-2 text-[16px] text-gray-700">
                         <Link href="/profile" className="block">
                           Profile
                         </Link>
                       </div>
                       <button
                         onClick={() => signOut()}
-                        className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        className="w-full text-left px-4 py-2 text-[16px] text-gray-700 hover:bg-gray-100"
                       >
                         Logout
                       </button>
@@ -86,7 +96,7 @@ export default function Navbar() {
               ) : (
                 <button
                   onClick={() => signIn("google")}
-                  className="hover:bg-green-700 bg-green-300 px-3 py-2 rounded-md text-sm font-medium"
+                  className="bg-green-600 border-spacing-2 hover:bg-green-500 px-3 py-2 rounded-md text-sm font-medium"
                 >
                  Login
                 </button>
@@ -149,15 +159,15 @@ export default function Navbar() {
             >
               Plants
             </Link>
-            <Link
+            {/* <Link
               href="/identify"
               className="block hover:bg-green-700 px-3 py-2 rounded-md text-base font-medium"
             >
               Identify
-            </Link>
+            </Link> */}
             <Link
               href="/journey"
-              className="hover:bg-green-700 px-3 py-2 rounded-md text-sm font-medium"
+              className="block hover:bg-green-700 px-3 py-2 rounded-md text-base font-medium"
             >
               Journey
             </Link>
@@ -207,7 +217,7 @@ export default function Navbar() {
             ) : (
               <button
                 onClick={() => signIn("google")}
-                className="block hover:bg-green-700 bg-green-300 px-3 py-2 rounded-md text-base font-medium"
+                className="block bg-green-700 hover:bg-green-300 px-3 py-2 rounded-md text-base font-medium"
               >
                Login
               </button>

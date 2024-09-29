@@ -11,6 +11,8 @@ const nextConfig = {
         hostname: 'fonts.googleapis.com',
       },
     ],
+    domains: ['api.dicebear.com', 'ui-avatars.com'],
+    dangerouslyAllowSVG: true,  // Enable SVG support
   },
 };
 
