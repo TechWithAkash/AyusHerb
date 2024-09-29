@@ -29,7 +29,7 @@ export default function Home() {
                     href="/identify"
                     className="flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 md:py-4 md:text-lg md:px-10"
                   >
-                    Identify a Plant
+                    Identify a Herb
                   </Link>
                   <Link
                     href="/plants"
@@ -42,11 +42,11 @@ export default function Home() {
             </main>
           </div>
         </div>
-        <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-full">
+        <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-full ">
           <Image
             src="/images/hero-image.jpg"
             alt="Various herbal plants"
-            className="h-72 w-full object-cover sm:h-96 md:h-full lg:h-full"
+            className="h-72 w-full object-cover sm:h-96 md:h-full lg:h-full hidden md:block"
             width={1000}
             height={1000}
           />
