@@ -11,6 +11,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import Image from 'next/image';
 
 // Expanded herb data
 const herbData = [
@@ -229,7 +230,7 @@ const HerbCard = ({ herb }) => {
     <Card className="mb-6 overflow-hidden hover:shadow-lg transition-shadow duration-300">
       <div className="flex flex-col md:flex-row">
         <div className="md:w-1/3">
-          <img src={herb.imageUrl} alt={herb.name} className="w-full h-full object-cover" />
+          <Image src={herb.imageUrl} alt={herb.name} className="w-full h-full object-cover" />
         </div>
         <div className="md:w-2/3 p-6">
           <CardHeader>
@@ -329,7 +330,7 @@ const AYUSHHealthAdvisor = () => {
           <Card className="border-0 shadow-none">
             <CardHeader>
               <CardTitle className="text-3xl mb-2">Describe Your Symptoms</CardTitle>
-              <p className="text-gray-600">Tell us how you're feeling, and we'll suggest natural remedies.</p>
+              <p className="text-gray-600">Tell us how you&apos;re feeling, and we&apos;ll suggest natural remedies.</p>
             </CardHeader>
             <CardContent>
               <SymptomForm onSubmit={handleSubmit} />
@@ -349,7 +350,7 @@ const AYUSHHealthAdvisor = () => {
                 <AlertCircle className="h-6 w-6 text-green-800" />
                 <AlertTitle className="text-2xl font-semibold text-green-800 mb-2">Analysis Result</AlertTitle>
                 <AlertDescription className="text-green-800">
-                  Based on your symptoms, we've identified these health categories:
+                <p>Based on your symptoms, we&apos;ve identified these health categories:</p>
                   <div className="flex flex-wrap gap-2 mt-4">
                     {analysisResult.categories.map((category, index) => (
                       <Badge key={index} variant="secondary" className="text-lg py-1 px-3">
